@@ -13,6 +13,6 @@ if(if_result == 'y')
 	endCol<-readline(prompt="Enter the End Column Number: ")
 	data<-readWorksheet(wb, sheet=sheet, startRow = as.integer(startRow), endRow = as.integer(endRow), startCol = as.integer(startCol), endCol = as.integer(endCol))
 }
-#output_dest<-readline(prompt="Enter the Destination Path of the output file: ")
+output_dest<-readline(prompt="Enter the Destination Path of the output file: ")
 json_data<-prettify(toJSON(data))
-cat(json_data,file="JSON_output.json")
+cat(json_data,file=paste(output_dest,"JSON_output.json",sep=""))
